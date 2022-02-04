@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GamesService } from './services/services.service';
+import { BComponent } from './b/b.component';
 
 @Component({
   selector: 'app-root',
@@ -7,30 +7,11 @@ import { GamesService } from './services/services.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'tarea1';
 
-  constructor(private gs:GamesService){}
-
-  // viewData(){
-  //   console.log('view Data');
-  //   //this.logger.error("mensaje de prueba");
-  //   //this.logger.warning("mensaje de prueba");
-  //   //this.logger.log("Error, mensaje de prueba");
-  //   try {
-  //     this.logger.log('Iniciando metodo view data');
-  //   } catch (error) {
-  //     this.logger.error(error);
-  //   }
-  // }
-
-  // viewMethod(){
-  //   this.title = 'viewMethod';
-  // }
+  constructor(private b:BComponent){}
 
   viewGames(){
-    console.log(this.gs.getGames());
-
-    return this.gs.getGames();
+    console.log(this.b.viewGames);
   }
 }
 

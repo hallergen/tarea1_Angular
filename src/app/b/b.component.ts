@@ -1,18 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-// import { GamesService } from '../services/services.service';
+import { GamesService } from '../services/services.service';
+
 
 @Component({
   selector: 'app-b',
   templateUrl: './b.component.html',
   styleUrls: ['./b.component.css']
 })
-export class BComponent implements OnInit {
+export class BComponent implements OnInit{
 
-  constructor() { 
+  list : any[] = []
+  constructor(private gs:GamesService) { }
 
-    
+  viewGames(){
+    return this.gs.getGames();
   }
-    ngOnInit(): void {
-  }
+  
+ ngOnInit(): void {
+     this.list = this.viewGames()
+ }
 
 }
